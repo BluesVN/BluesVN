@@ -2,16 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>涤纶的首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0" />
+    <title>涤纶裤 建设中……</title>
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+    <script src="js/jquery-2.1.1.min.js"></script>
     <style>
+        .icon-youhuiquan{
+            text-align: center;
+            line-height: 77px;
+            left: 0;
+            position: absolute;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            font-size: 45px;
+            color: #436434;
+            -webkit-animation:myrotate 0.8s linear  infinite;/*线性无限*/
+            animation-direction:alternate;/*轮流反向*/
+            animation-play-state:running;//规定动画正在运行
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: absolute;
+            left: 0;right: 0;
+            margin: auto;
+            top: 0;bottom: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+        }
+        /*按钮主体*/
+        .xiuxiu {
+            width: 80px;
+            height: 80px;
+            background: #fafafa;
+            border: 1px solid rgba(52, 61, 68, 0.06);
+            box-shadow: 0 1px 3px 0 #436434;
+            background-clip: content-box;
+            padding: 3px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;right: 0;
+            margin: auto;
+            top: 0;bottom: 0;
+            z-index: 9;
+            box-sizing: border-box;
+        }
+        /*波动*/
+        .wave{
+            width: 50px;
+            height: 50px;
+            background: #436434;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;right: 0;
+            margin: auto;
+            top: 0;bottom: 0;
+            box-sizing: border-box;
+            z-index:1;
+            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
+            animation-delay:0.2s;
+            animation-play-state:running;
 
+        }
+        .wave2{
+            width: 50px;
+            height: 50px;
+            background: #436434;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;right: 0;
+            margin: auto;
+            top: 0;bottom: 0;
+            box-sizing: border-box;
+            z-index:2;
+            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
+            animation-delay:0.5s;
+            animation-play-state:running;
+        }
+        .wave3{
+            width: 50px;
+            height: 50px;
+            background: #436434;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;right: 0;
+            margin: auto;
+            top: 0;bottom: 0;
+            box-sizing: border-box;
+            z-index:3;
+            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
+            animation-delay:0.8s;
+            animation-play-state:running;
+        }
+        .wave4{
+            width: 50px;
+            height: 50px;
+            background: #436434;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;right: 0;
+            margin: auto;
+            top: 0;bottom: 0;
+            box-sizing: border-box;
+            z-index:3;
+            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
+            animation-delay:1s;
+            animation-play-state:running;//规定动画正在运行
+        }
+        @-webkit-keyframes mywave
+        {
+            0% {
+                left: 0;right: 0;
+                margin: auto;
+                top: 0;bottom: 0;
+                width:0;
+                height:0;
+            }
+            100% {
+                left: 0;right: 0;
+                margin: auto;
+                top: 0;bottom: 0;
+                opacity: 0;
+                width:280px;
+                height:280px;
+            }
+        }
+        @-webkit-keyframes myrotate
+        {
+            0% {
+                transform:rotate(10deg)
+            }
+            100% {
+                transform:rotate(-10deg)
+            }
+        }
     </style>
 </head>
 <body>
-hi~欢迎来到我的首页，本站正在建设中……
-
-2017/11/28
+<div class="box">
+        <div class="xiuxiu">
+            <audio><source src="audio/xiuxiuxiu3.mp3" type="audio/aac" /></audio>
+            <i class="iconfont icon-youhuiquan"></i>
+        </div>
+        <!--下面是波动 wave图层-->
+        <div class="wave"></div>
+        <div class="wave2"></div>
+        <div class="wave3"></div>
+        <div class="wave4"></div>
+</div>
 </body>
 </html>
+
+
+<script>
+    $(document).on('click','.xiuxiu', function() {
+        $(this).addClass('voice1');//加上动画样式
+        $(this).find('audio').get(0).play();
+        $(this).find('audio').bind('ended',function () {
+            $('.xiuxiu').removeClass('voice1');//去掉动画样式
+        });
+    });
+</script>
+
+
+
