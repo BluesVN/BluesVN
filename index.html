@@ -1,172 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0, maximum-scale=1.0" />
-    <title>涤纶裤 建设中……</title>
-    <link rel="stylesheet" type="text/css" href="font/iconfont.css">
-    <script src="js/jquery-2.1.1.min.js"></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="web前端，web前端个人简历，前端开发,dylan" />
+    <meta name="description" content="于林楠web前端工程师个人简历">
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" href="css/component.css" />
+	<link rel="stylesheet" href="css/index.css" />
+	<title>前端Dylan的简历</title>
+    <link rel="shortcut icon" href="image/pc.ico" type="image/x-icon">
     <style>
-        .icon-youhuiquan{
-            text-align: center;
-            line-height: 77px;
-            left: 0;
+        .mainCQQ{
             position: absolute;
-            right: 0;
-            margin: auto;
-            top: 0;
-            bottom: 0;
-            font-size: 45px;
-            color: #436434;
-            -webkit-animation:myrotate 0.8s linear  infinite;/*线性无限*/
-            animation-direction:alternate;/*轮流反向*/
-            animation-play-state:running;//规定动画正在运行
+            left: 47%;
+            margin-top:60px ;
         }
-        body{
-            margin: 0;
-            padding: 0;
+        .boxQQ{
+            padding-bottom: 5px;
+            background: #d1cbd7;
+            border-radius: 100%;
+            transition: all .1s;
         }
-        .box{
-            position: absolute;
-            left: 0;right: 0;
-            margin: auto;
-            top: 0;bottom: 0;
-            box-sizing: border-box;
-            -webkit-user-select: none;
+        .boxQQ:active{
+            margin-top: 3px;
+            padding-bottom: 2px;
         }
-        /*按钮主体*/
-        .xiuxiu {
-            width: 80px;
-            height: 80px;
-            background: #fafafa;
-            border: 1px solid rgba(52, 61, 68, 0.06);
-            box-shadow: 0 1px 3px 0 #436434;
-            background-clip: content-box;
-            padding: 3px;
-            border-radius: 50%;
-            position: absolute;
-            left: 0;right: 0;
-            margin: auto;
-            top: 0;bottom: 0;
-            z-index: 9;
-            box-sizing: border-box;
+        .boxQQ:active .btnQQ{
+            text-shadow:0px 1px 1px rgba(255, 255, 255, 0.53);
+            box-shadow:inset 0 100px 1px 10px rgba(255, 255, 255, 0.09),0 2px 10px rgba(72, 82, 94, 0.81);
+            background: url("image/企鹅.png") no-repeat right;
+            background-size: 200px 100px;
+            position: relative;
         }
-        /*波动*/
-        .wave{
-            width: 50px;
-            height: 50px;
-            background: #436434;
-            border-radius: 50%;
-            position: absolute;
-            left: 0;right: 0;
-            margin: auto;
-            top: 0;bottom: 0;
-            box-sizing: border-box;
-            z-index:1;
-            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
-            animation-delay:0.2s;
-            animation-play-state:running;
-
+        .btnQQ{
+            color:white;
+            width: 100px; height: 100px;
+            border:none;
+            outline: none;
+            border-radius: 100%;
+            background: url("image/企鹅.png") no-repeat left;
+            background-size: 200px 100px;
+            position: relative;
         }
-        .wave2{
-            width: 50px;
-            height: 50px;
-            background: #436434;
-            border-radius: 50%;
-            position: absolute;
-            left: 0;right: 0;
-            margin: auto;
-            top: 0;bottom: 0;
-            box-sizing: border-box;
-            z-index:2;
-            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
-            animation-delay:0.5s;
-            animation-play-state:running;
-        }
-        .wave3{
-            width: 50px;
-            height: 50px;
-            background: #436434;
-            border-radius: 50%;
-            position: absolute;
-            left: 0;right: 0;
-            margin: auto;
-            top: 0;bottom: 0;
-            box-sizing: border-box;
-            z-index:3;
-            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
-            animation-delay:0.8s;
-            animation-play-state:running;
-        }
-        .wave4{
-            width: 50px;
-            height: 50px;
-            background: #436434;
-            border-radius: 50%;
-            position: absolute;
-            left: 0;right: 0;
-            margin: auto;
-            top: 0;bottom: 0;
-            box-sizing: border-box;
-            z-index:3;
-            -webkit-animation:mywave 2s ease  infinite;/*线性无限*/
-            animation-delay:1s;
-            animation-play-state:running;//规定动画正在运行
-        }
-        @-webkit-keyframes mywave
-        {
-            0% {
-                left: 0;right: 0;
-                margin: auto;
-                top: 0;bottom: 0;
-                width:0;
-                height:0;
-            }
-            100% {
-                left: 0;right: 0;
-                margin: auto;
-                top: 0;bottom: 0;
-                opacity: 0;
-                width:280px;
-                height:280px;
-            }
-        }
-        @-webkit-keyframes myrotate
-        {
-            0% {
-                transform:rotate(10deg)
-            }
-            100% {
-                transform:rotate(-10deg)
-            }
+        .btnQQ:active{
+            background: url("image/企鹅.png") no-repeat right;
+            background-size: 200px 100px;
+            position: relative;
         }
     </style>
 </head>
 <body>
-<div class="box">
-        <div class="xiuxiu">
-            <audio><source src="audio/xiuxiuxiu3.mp3" type="audio/aac" /></audio>
-            <i class="iconfont icon-youhuiquan"></i>
+<!-- header navigation -->
+<header>
+	<div id="logo">
+		<div id="header_img"><img src="image/logo.jpg" alt="" /></div>
+		<div id="header_p">
+			<p id="header_p1">Dylan</p>
+			<p id="header_p2">个人简历</p>
+		</div>
+	</div>
+	<nav>
+		<ul>
+			<li><a href="index.html">首页</a></li>
+			<li><a id="JLDownload" href="http://pan.baidu.com/s/1eSHtjAM" style="color: #ff078d">简历文档下载</a></li>
+			<li><a id="Mystory" href="">我的故事</a></li>
+			<li><a id="MessageWall" href="">留言墙</a></li>
+
+		</ul>
+	</nav>
+</header>
+<!-- header navigation end -->
+<!-- aside navigation -->
+<aside>
+		<a href="#page1"><b>首页</b></a>
+		<a href="#page2"><b>关于我</b></a>
+		<a href="#page3"><b>专业技能</b></a>
+		<a href="#page4"><b>我的经历</b></a>
+		<a href="#page5"><b>我的作品</b></a>
+		<a href="#page6"><b>联系我</b></a>
+</aside>
+<!-- aside navigation end -->
+<!-- home page -->
+<div id="dowebok">
+	<!-- home -->
+	<div class="section one">
+		<div id="home">
+			<div id="home_content">
+				<div id="home_head">
+					<div id="home_head_content">
+						<img src="image/hp.png" id="home_photo1" alt="" />
+						<img src="image/泥塑.png" id="home_photo2" alt="" />
+					</div>
+				</div>
+				<div id="home_info">
+					<p id="home_info1">勿忘初心，方得始终。</p>
+					<div id="home_info_box">
+						<p id="home_info2">我叫于林楠</p>
+						<p id="home_info3">今年23岁</p>
+						<p id="home_info4">一名前端研发工程师</p>
+						<p id="home_info5">bulesvn@foxmail.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- home end -->
+	<!-- about -->
+	<div class="section two">
+		<div id="about">
+			<div id="about_content">
+				<div class="title">
+					<h1>关于我</h1>
+				</div>
+				<div id="about_list_content">
+					<div class="about_list" id="about_list1">
+						<div class="about_list_eg" id="about_en_edu">education</div>
+						<div class="about_list_cn" id="about_cn_edu">学历<p>本科</p></div>
+					</div>
+                    <div class="about_list">
+                        <div class="about_list_eg" id="about_en_age">age</div>
+                        <div class="about_list_cn" id="about_cn_age">年龄<p>23岁</p></div>
+                    </div>
+                    <div class="about_list">
+                        <div class="about_list_eg" id="about_en_loc">location</div>
+                        <div class="about_list_cn" id="about_cn_loc">坐标<p>杭州</p></div>
+                    </div>
+                    <div class="about_list">
+                        <div class="about_list_eg" id="about_en_sta">status</div>
+                        <div class="about_list_cn" id="about_cn_sta">状态<p>充电</p></div>
+                    </div>
+				</div>
+				<div id="about_info"></div>
+			</div>
+		</div>
+	</div>
+    <!-- about end -->
+    <!-- skill -->
+    <div class="section three">
+		<div id="skill">
+			<div id="skill_content">
+				<div class="title">
+					<h1>专业技能</h1>
+				</div>
+				<div id="skill_info"></div>
+                <div id="skill_list">
+                    <div class="skill_list_content" id="skill_list1">
+                        <div class="skill_icon" id="skill_icon1"></div>
+                        <div class="skill_name">Bootstrap</div>
+                        <div class="skill_flag"></div>
+                        <div class="skill_int" id="skill_int1"></div>
+                    </div>
+                    <div class="skill_list_content" id="skill_list2">
+                        <div class="skill_icon" id="skill_icon2"></div>
+                        <div class="skill_name">HTML</div>
+                        <div class="skill_flag"></div>
+                        <div class="skill_int" id="skill_int2"></div>
+                    </div>
+                    <div class="skill_list_content" id="skill_list3">
+                        <div class="skill_icon" id="skill_icon3"></div>
+                        <div class="skill_name">CSS</div>
+                        <div class="skill_flag"></div>
+                        <div class="skill_int" id="skill_int3"></div>
+                    </div>
+                    <div class="skill_list_content" id="skill_list4">
+                        <div class="skill_icon" id="skill_icon4"></div>
+                        <div class="skill_name">JavaScript</div>
+                        <div class="skill_flag"></div>
+                        <div class="skill_int" id="skill_int4"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--下面是波动 wave图层-->
-        <div class="wave"></div>
-        <div class="wave2"></div>
-        <div class="wave3"></div>
-        <div class="wave4"></div>
+    </div>
+    <!-- skill end -->
+    <!-- experience -->
+    <div class="section four">
+    	<div id="exp">
+        	<div id="exp_content">
+        		<div class="title">
+                	<h1>我的经历</h1>
+                </div>
+                <div id="exp_info" class="exp_scale b_to_t"></div>
+                <div id="exp_list_slider">
+                	<div id="exp_list_slider_content" class="exp_scale">
+                        <div id="exp_list_content">
+                            <div class="exp_list">
+                                <div class="exp_list_left">
+                               		<div id="exp_list_left1">
+                                        <dl>
+                                            <dt>中国惠普</dt>
+                                            <dd class="exp_list_time">2015年4月~2016年7月</dd>
+                                            <dd>所属部门：Social Customer Care Command Center</dd>
+                                            <dd>负责技术支持、产品销售以及平台维护，微博、微信、兴趣部落等新媒体创意，以及品牌产品的营销和推广</dd>
+                                            <dd>负责Radian6的管理</dd>
+                                            <dd>获得<a href="#" class="md-trigger" data-modal="modal-1">最佳新人奖</a></dd>
+                                            <dd>同期工作之余开始<a href="#" class="md-trigger" data-modal="modal-2">自学web前端各项技术</a></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                        	</div>
+                            <div class="exp_list">
+                                <div class="exp_list_left">
+                                    <div id="exp_list_left3">
+                                        <dl>
+                                            <dt>坐标杭州</dt>
+                                            <dd class="exp_list_time"></dd>
+                                            <dd>期望带着我对前端学习的热爱</dd>
+                                            <dd>满满的正能量</dd>
+                                            <dd>来到一家志趣相投的互联网公司</dd>
+                                            <dd>展翅翱翔</dd>
+                                            <dd>继续我的极客之旅！</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div id="exp_list_to">
+                    	<div id="exp_list_toleft"><img src="image/exp_list_toleft.png" /></div>
+                    	<div id="exp_list_toright"><img src="image/exp_list_toright.png" /></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- experience end -->
+    <!-- demo -->
+    <div class="section five">
+    	<div id="demo">
+        	<div id="demo_content">
+            	<div class="title">
+                	<h1>我的作品</h1>
+                </div>
+                <div id="demo_content_list">
+                    <ul class="demo_box">
+                    	<li class="demo_scale">
+                            <div class="demo_box_content">
+                            	<div class="demo_box_hover">
+                                    <p class="demo_box_title">BSLaravel</p>
+                                    <span class="demo_box_hover_icon">
+                                        <a href="BSLaravel.html" target="_blank" class="demo_box_link">
+                                            <img src="image/demo-link.png" alt="" />
+                                        </a>
+                                    </span>
+                                </div>
+                                <img src="image/demo_box1.jpg" alt="" class="demo_box_bg"/>
+                            </div>
+                        </li>
+                        <li class="demo_scale">
+                            <div class="demo_box_content">
+                                <div class="demo_box_hover">
+                                    <p class="demo_box_title">小米首页</p>
+									<span class="demo_box_hover_icon">
+										<a href="Mi.html" target="_blank" class="demo_box_link">
+											<img src="image/demo-link.png" alt="" />
+										</a>
+									</span>
+								</div>
+								<img src="image/demo_box2.jpg" alt="" class="demo_box_bg"/>
+							</div>
+                        </li>
+                        <li class="demo_scale">
+							<div class="demo_box_content">
+                            	<div class="demo_box_hover">
+									<p class="demo_box_title">锤子科技mobile</p>
+                                    <span class="demo_box_hover_icon">
+                                    	<a href="smartphone.html" target="_blank" class="demo_box_link">
+											<img src="image/demo-link.png" alt="" />
+                                        </a>
+                                    </span>
+                                </div>
+								<img src="image/demo_box3.jpg" alt="" class="demo_box_bg"/>
+                            </div>
+                        </li>
+                        <li class="demo_scale">
+							<div class="demo_box_content">
+                            	<div class="demo_box_hover">
+                                	<p class="demo_box_title">自如</p>
+                                    <span class="demo_box_hover_icon">
+                                    	<a href="ZR.html" target="_blank" class="demo_box_link">
+											<img src="image/demo-link.png" alt="" />
+                                        </a>
+                                    </span>
+                                </div>
+								<img src="image/demo_box4.jpg" alt="" class="demo_box_bg"/>
+                            </div>
+                        </li>
+                    </ul>
+				</div> 
+                <div id="demo_info" class="demo_scale">
+                    <p>这是我的部分demo。</p>
+                    <p>更多demo请移步<a href="#" class="md-trigger" data-modal="modal-3">这里</a>。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- demo end -->
+    <!-- contact -->
+	<div class="section six">
+		<div id="contact">
+			<div id="contact_content">
+				<div class="title">
+					<h1>联系我</h1>
+				</div>
+                <div id="contact_head">
+					<div id="contact_head1">思维 设计 梦想 未来</div>
+                    <div id="contact_head2">
+                    	<span>thinking</span>
+                        <span>design</span>
+                        <span>dream</span>
+                        <span>future</span>
+                    </div>
+                </div>
+                <div id="contact_info" class="contact_scale">
+                </div>
+                <div id="contact_way">
+					<div id="contact_message1" class="contact_message contact_scale">
+
+                    </div>
+                    <div id="contact_form">
+
+                    </div>
+
+                    <div id="contact_message2" class="contact_message">谢谢</div>
+
+                </div>
+            </div>
+            <!--QQ对话的按钮-->
+            <div class="mainCQQ">
+                <div class="boxQQ">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=476618360&site=qq&menu=yes"><input class="btnQQ" type="button" value="" ></a>
+                </div>
+            </div>
+            <!--QQ结束-->
+        </div>
+	</div>
+    <!-- contact end -->
 </div>
+<!-- home page end -->
+<!-- pop layer -->
+<div class="md-modal md-effect-11" id="modal-1">
+	<div class="md-content">
+		<h3>大力神杯~呦吼</h3>
+		<div>
+			<img src="image/Minions.jpg" alt="" />
+			<button class="md-close">OK</button>
+		</div>
+	</div>
+</div>
+<div class="md-modal md-effect-13" id="modal-2">
+	<div class="md-content">
+		<h3>学习路线</h3>
+		<div class="modal-learn">
+           	<p>学习用到的资料</p>
+            <ul>
+                <li>  慕课网and秒味课堂</li>
+                <li>《html5+css3基础教程》</li>
+                <li>《JavaScript DOM编程艺术》</li>
+                <li>《JavaScript高级程序设计（第三版）》</li>
+            </ul>
+			<button class="md-close">OK</button>
+		</div>
+	</div>
+</div>
+<div class="md-modal md-effect-11" id="modal-3">
+    <div class="md-content">
+        <h3>DEMO</h3>
+        <div class="modal-example">
+            <p>部分展示(平时的练习)</p>
+            <ul>
+                <li><span><a href="smartisanPC.html" target="_blank">smartisanPC</a></span></li>
+                <li><span><a href="AJAXregister.html" target="_blank">AJAXregister</a></span></li>
+                <li><span><a href="DDtransform.html" target="_blank">《断电旋转》</a></span></li>
+                <li><span><a href="12JS/12JS.html" target="_blank">12种JS效果</a></span></li>
+                <li><span><a href="banner3D.html" target="_blank">banner3D</a></span></li>
+                <li><span><a href="squeezebox.html" target="_blank">手风琴</a></span></li>
+                <li><span><a href="SuperRotae.html" target="_blank">SuperRotae</a></span></li>
+            </ul>
+            <p>还有好多好多好玩的……</p>
+            <button class="md-close">OK</button>
+        </div>
+    </div>
+</div>
+
+<div class="md-overlay"></div>
+<!-- pop layer -->
 </body>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cssParser.js"></script>
+<script src="js/modalEffects.js"></script>
+<script src="js/index.js"></script>
 </html>
-
-
-<script>
-    $(document).on('click','.xiuxiu', function() {
-        $(this).addClass('voice1');//加上动画样式
-        $(this).find('audio').get(0).play();
-        $(this).find('audio').bind('ended',function () {
-            $('.xiuxiu').removeClass('voice1');//去掉动画样式
-        });
-    });
-</script>
-
-
 

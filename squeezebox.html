@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.slide{
+				width:800px;
+				height:300px;
+				position: relative;
+				margin:auto;
+				overflow: hidden;
+			}
+			.slide>div{
+				width:inherit; height: inherit;
+				position: absolute;
+				top:0; left: 0;
+				transition: all .3s;
+			}
+			.slide .txt{
+				position: absolute;
+				width:inherit;
+				height:100px;
+				background:rgba(0,0,0,.5);
+				left:0; 
+				bottom:-100px;
+				padding:20px;
+				box-sizing: border-box;
+				opacity: 0;
+				transition: all 1s;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slide">
+			<div style="background:saddlebrown">
+				<div class="txt">1</div>
+			</div>
+			<div style="background:salmon">
+				<div class="txt">2</div>
+			</div>
+			<div style="background:seagreen">
+				<div class="txt">3</div>
+			</div>
+			<div style="background:skyblue">
+				<div class="txt">4</div>
+			</div>
+			
+			<div style="background:slateblue">
+				<div class="txt">5</div>
+			</div>
+			<div style="background:springgreen">
+				<div class="txt">6</div>
+			</div>
+			<div style="background:steelblue">
+				<div class="txt">7</div>
+			</div>
+			<div style="background:chartreuse">
+				<div class="txt">8</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var slide=document.querySelector("slide");
+	var slide_div=document.querySelectorAll(".slide>div");
+	var slide_txt=document.querySelectorAll(".slide .txt");
+
+	/*实现布局*/
+	for(var i=1;i<slide_div.length;i++){
+		slide_div[i].style.left=100*i+"px";
+	};
+	
+	/*绑定点击事件*/
+	for(var n=0;n<slide_div.length;n++){
+		slide_div[n].index=n;
+		//alert(n);//0-7
+		slide_div[n].onclick=function(){
+			var L=0;
+			//this.style.background="#000";
+			for(var m=0;m<slide_div.length;m++){
+				if(this.index+1==m)
+				{//alert(this.index);0-7
+					L=480;
+				}
+				slide_div[m].style.left=(40*m+L)+"px";
+				slide_txt[m].style.bottom="-100px";
+				slide_txt[m].style.opacity="0";
+			};
+			
+			slide_txt[this.index].style.bottom=0;
+			slide_txt[this.index].style.opacity="1";
+			
+		}
+	};
+
+</script>

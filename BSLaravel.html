@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        *{font-family: 微软雅黑;}
+        div,a,input{ cursor:pointer;}
+        p{cursor:auto}
+        .row{
+            margin: 0;
+        }
+       ::selection{
+            background: #f3635f;
+            color: white;
+        }
+        body{background: #ebebeb;
+            box-sizing: border-box;
+        }
+        .main-header{
+            background: url("img/La-header.jpg");
+            background-size: cover;
+            padding: 56px 0 ;
+        }
+        .main-header h1{
+            padding: 10px 15px 40px 15px;font-size:3em;color: white;
+        }
+        .sp{
+            background:#ffffff;
+            padding: 15px 0;
+            display: none;
+        }
+        @media  (max-width: 768px){
+            .nav1 a{
+                width: 50%;margin: 5px 0;display: inline-block;
+                transition: .8s;
+            }
+            .list-inline li{
+                width: 100%;
+                text-align: left;
+                background:#ffffff;
+            }
+            .sp{
+                display:block;
+                }
+            .main-left .main-right{
+                width: 100%;
+            }
+
+        }
+        .nav1 a{
+            display: inline-block;
+            border: 1px solid red; color: white;
+            padding:5px 15px;
+            border-radius: 3px;
+        }
+        .nav1 a:hover{background: #333;transition: .8s;
+        text-decoration: none;}
+        .nav2{
+            background: #ffffff; box-shadow: 0 2px #e1e1e1;
+        }
+        .dd{
+            box-sizing: border-box;
+            margin: 0;text-align: center;
+        }
+        .dd li{
+            padding: 15px 20px;
+        }
+        .dd a{
+            text-decoration: none;
+            color: #636363;
+        }
+        .dd li a:hover{
+            color:#f3635f;transition: .1s;
+        }
+        /*#xx{display: block}*/
+        .main-left{
+            /*border: 1px solid red;*/
+            padding: 0 15px;
+        }
+        .main-right{
+            /*border: 1px solid green;*/
+        }
+        .main-right div{
+            margin-bottom: 35px;
+        }
+        .news{
+          height: 738px;
+            background: #ffffff;
+            margin-bottom: 35px;
+        }
+        .xia::before{
+            content: " ";
+            border-bottom: 1px solid #f4645f ;
+            position: absolute;
+            bottom: 0;
+           width: 100px;
+        }
+        .mainbutton{
+            background:#f4645f ;border-radius: 2px;
+            padding:7px 14px;color: white;outline: none;border: none;
+        }
+        .mainbutton:hover{
+            background: #333;transition: .8s;
+        }
+        .tips{
+            border: 1px solid #e6e6e6;background: white;color: #666;
+            border-radius: 2px;padding: 2px 7px;float:left;margin: 4px;
+        }
+        .tips:hover{
+            background: #f4645f;color: white;text-decoration: none;transition: .2s;
+        }
+        .bottomh{
+            color: white;
+            font-size: 1.5em;border-bottom: 1px solid #303030;padding: 10px 0;position: relative
+        }
+        .bottomh::before{
+            content: " ";
+            border-bottom: 1px solid #f4645f ;
+            position: absolute;
+            bottom: 0;
+            width: 100px;
+        }
+        .bottom-menu{ margin: 0}
+        .bottom-menu a{
+            color: #959595;text-decoration: none;
+        }
+        .bottom-menu span{
+            color: #505050;
+        }
+
+        .bbb:hover{
+            color: #f4645f;transition: .3s;
+        }
+        .tips2{
+            border: 1px solid #303030;background: #202020;
+            border-radius: 2px;padding: 2px 7px;margin:6px ;
+           display: inline-block;
+
+        }
+        .tips2:hover{
+           ;background:#f4645f;color: white;transition: .2s;
+        }
+        .tips3{
+          background: transparent;
+           ;padding: 2px 7px;
+
+        }
+        .tips3:hover{
+        ;background:#f4645f;color: white;transition: .2s;
+        }
+        .bottom-box{
+           border-bottom: 1px dashed;padding: 12px 0;
+            position: relative;
+        }
+        .backtotop{
+            width: 30px;height: 30px;
+            border-radius: 2px;background: rgba(217, 80, 75, 0.6);
+            position: fixed;right: 15px;bottom: 15px;z-index: 99;
+        }
+        .backtotop::before{
+            content: " ";
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            left: 0;right: 0;
+            margin: auto;
+            top: 0;bottom: 0;
+            border-top: 1px solid white;
+            border-right: 1px solid white;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        .backtotop:hover{
+            background: #f4645f;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header class="main-header container-fluid " >
+    <div class="row">
+        <h1 class="text-center">为 WEB 艺术家创造的 PHP 框架。</h1>
+        <div class=" text-center  nav1 " >
+            <a class="">5.1中文文档</a>
+            <a class="">5.0中文文档</a>
+            <a class="">4.2中文文档</a>
+            <a class="">4.1中文文档</a>
+            <a class="">Lumen中文文档</a>
+            <a class="">问答社区</a>
+        </div>
+    </div>
+</header>
+<div class="nav2 container-fluid" >
+    <div class="row">
+        <div class="col-xs-12 " style="padding: 0">
+            <span class=" sp glyphicon glyphicon-tasks text-center " data-toggle="collapse" data-target="#xx" style=" "></span>
+            <ul class="list-inline collapse navbar-collapse  dd" id="xx" >
+                <li style="border-bottom: 2px solid #ff6607 ;"><a href="" >首页</a></li>
+                <li ><a href="">Lumen</a></li>
+                <li ><a href="">问答社区</a></li>
+                <li ><a href="">中文文档</a></li>
+                <li><a href="">下载离线文档</a></li>
+                <li ><a href="">API</a></li>
+                <li ><a href="">PHP中文手册</a></li>
+                <li ><a href="">Composer</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main container">
+    <div class="row ">
+        <div class="main-left col-md-8 col-sm-12" style="padding: 35px">
+            <div class="news " style="padding: 15px">
+                    <h2 class="text-center">Laravel 5.3 正式发布</h2>
+                <p class="text-center" style="padding: 15px">作者：王赛 • 2016年8月24日</p>
+                <img src="img\5.3版本Laravel.png" alt="" style="width: 100%">
+                <p style="font-size: 18px ;padding: 15px 0">
+                    Laravel 项目组自豪地宣布 Laravel 5.3 正式发布了 ！5.3 版本中的新增特性主要集中在提升开发速度，通过增强常见任务的开箱即用功能提升开发效率。 此版本是常规发布版本，提供六个月的 bug 修复补丁和一年的安全补丁。当前，Laravel 5.1 是最新的 LTS（长期支持） 版本，提供两年的 bug
+                </p>
+                <input type="button" value="阅读全文" class="mainbutton">
+                <hr>
+                <span class="glyphicon glyphicon-folder-open" style="color: #666"></span>
+            </div>
+            <div class="news " style="padding: 15px;height: 720px">
+                <h2 class="text-center">Laracon 开发者大会快报：听 Taylor Otwell 讲解 Laravel 5.3 的新特性</h2>
+                <p class="text-center" style="padding: 15px">作者：王赛 • 2016年7月28日</p>
+                <img src="img\elephant.png" alt="" style="width: 100%">
+                <p style="font-size: 18px ;padding: 15px 0">
+                    今天， Taylor Otwell 在 Laracon US 开发者大会上就 Laravel 5.3 的新特性作了长时间的演讲，演讲内容主要概括为四个方面：Laravel Scout、Laravel Passport、Laravel Mailable 和 Laravel Notifications。 此次演讲预定是
+                </p>
+                <input type="button" value="阅读全文" class="mainbutton">
+                <hr>
+                <span class="glyphicon glyphicon-folder-open" style="color: #666"></span>
+            </div>
+            <div class="news " style="padding: 15px;height: 796px">
+                <h2 class="text-center">Laravel 五岁了</h2>
+                <p class="text-center" style="padding: 15px">作者：王赛 • 2016年6月12日</p>
+                <img src="img\fiveyears.jpg" alt="" style="width: 100%;">
+                <p style="font-size: 18px ;padding: 15px 0">
+                    五年前（2011年6月11日）的今天，Taylor Otwell 将 Laravel 带到了这个世界！ 下面摘抄了部分原文：点这里看完整的原文 I've been working on this framework for about 7 months. I've worked really hard to mak
+                </p>
+                <input type="button" value="阅读全文" class="mainbutton">
+                <hr>
+                <span class="glyphicon glyphicon-folder-open" style="color: #666"></span>
+            </div>
+            <div class="news " style="padding: 15px">
+                <h2 class="text-center">Composer 终于走到了 v1.0 版本</h2>
+                <p class="text-center" style="padding: 15px">作者：王赛 • 2016年4月6日</p>
+                <img src="img\composerv10.jpg" alt="" style="width: 100%">
+                <p style="font-size: 18px ;padding: 15px 0">
+                    Composer 项目刚刚宣布在其第五个生日的同一天发布了 V1.0 正式版。 以下翻译自 Composer 创始人 Jordi Boggiano 的原文： 五年前的今天，Composer 诞生了。在某些方面，这感觉就像昨天发生的事，至少它不像过去了五年。但在其他方面，好像是上辈子的事了，没有一个完整的 PHP 生
+                </p>
+                <input type="button" value="阅读全文" class="mainbutton">
+                <hr>
+                <span class="glyphicon glyphicon-folder-open" style="color: #666"></span>
+            </div>
+            <div class="news " style="padding: 15px;height: 672px">
+                <h2 class="text-center">Lumen 5.2 正式发布</h2>
+                <p class="text-center" style="padding: 15px">作者：王赛 • 2016年1月8日</p>
+                <img src="img\Lumen5.20.png" alt="" style="width: 100%">
+                <p style="font-size: 18px ;padding: 15px 0">
+                    Lumen 5.2.0 已经正式发布了！此次发布的版本包含了 Laravel 5.2 的组件并在核心理念上做了重大改变。 建议所有 Lumen 用户阅读相关文档了解以下所提到的改变： 专注提供无状态的 API 服务 Lumen 5.2 对 Lumen 进行了大瘦身专注于，并且将专注提供无状态的 JSON API 服务。
+                </p>
+                <input type="button" value="阅读全文" class="mainbutton">
+                <hr>
+                <span class="glyphicon glyphicon-folder-open" style="color: #666"></span>
+            </div>
+            <div class="news " style="padding: 15px;height: 708px">
+                <h2 class="text-center">Laravel 5.2 正式发布</h2>
+                <p class="text-center" style="padding: 15px">作者：王赛 • 2015年12月22日</p>
+                <img src="img\Laravel5.2.png" alt="" style="width: 100%">
+                <p style="font-size: 18px ;padding: 15px 0">
+                    Laravel 5.2 正式版刚刚发布了，前边我们已经发过一篇文章列举了新版本带来的新特性，有兴趣的同学可以再去看一下：Laravel 5.2 要发布了，来看看都有哪些新特性吧 。 话不多说，还是直接 composer install 并看文档吧！
+                </p>
+                <input type="button" value="阅读全文" class="mainbutton">
+                <hr>
+                <span class="glyphicon glyphicon-folder-open" style="color: #666"></span>
+            </div>
+            <div style="position: absolute;left: 0;right: 0;text-align: center;">
+                <input type="button" value="第 1 页 ⁄ 共 5 页" class="mainbutton ">
+                <input type="button" value=">" class="mainbutton">
+            </div>
+
+<!-- 以下是右边侧栏-->
+        </div>
+        <div class="main-right col-md-4  col-sm-12" style="padding: 35px" >
+            <div class="sidebar container-fluid " style="width: 100%;height: 162px;background: white;padding: 15px ;position: relative" >
+                <h4 style="font-size: 1.5em;border-bottom: 1px solid #ebebeb;padding: 10px 0;position: relative" class="xia" >社区</h4>
+                <p>QQ：476618360</p>
+                <a href="" style="color: #f4645f"><span class="glyphicon glyphicon-envelope"></span>    问答社区</a>
+            </div>
+            <div class="sidebar container-fluid " style="width: 100%;height: 162px;background: white;padding: 15px ;position: relative" >
+                <h4 style="font-size: 1.5em;border-bottom: 1px solid #ebebeb;padding: 10px 0;position: relative" class="xia" >下载</h4>
+                <input type="button" value="Laravel & Lumen 一键安装包下载" class="mainbutton" style="width: 100%;">
+            </div>
+            <div class="sidebar container-fluid " style="width: 100%;background: white;padding: 15px ;position: relative" >
+                <h4 style="font-size: 1.5em;border-bottom: 1px solid #ebebeb;padding: 10px 0;position: relative;" class="xia" >标签云</h4>
+                <a href="" class="tips">Laravel 5.2</a>
+                <a href="" class="tips">Spark</a>
+                <a href="" class="tips">镜像</a>
+                <a href="" class="tips">新版本发布</a>
+                <a href="" class="tips">LTS</a>
+                <a href="" class="tips">微框架</a>
+                <a href="" class="tips">Lumen</a>
+                <a href="" class="tips">命名空间</a>
+                <a href="" class="tips">Laravel4</a>
+                <a href="" class="tips">升级</a>
+                <a href="" class="tips">错误页</a>
+                <a href="" class="tips">Laravel 5</a>
+                <a href="" class="tips">Artisan</a>
+                <a href="" class="tips">Laravel 5.1</a>
+                <a href="" class="tips">Lravel</a>
+                <a href="" class="tips">...</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="bottom container-fluid" style="background: #202020;padding:35px 70px;margin-top: 30px">
+    <div class="row " >
+        <div style="margin: auto;padding:0 ">
+            <div class="col-md-4 bottom-menu" >
+                <h4 class="bottomh" >最新文章</h4>
+                <div class="bottom-box">
+                    <a href="" class="bbb">Laravel 5.3 正式发布</a><br>
+                    <span>2016年8月24日</span>
+                </div>
+                <div  class="bottom-box">
+                    <a href="" class="bbb">Laracon 开发者大会快报：听 Taylor Otwell 讲解 Laravel 5.3 的新特性</a><br>
+                    <span>2016年7月28日</span>
+                </div>
+                <div class="bottom-box" >
+                    <a href="" class="bbb">Laravel 五岁了</a><br>
+                    <span>2016年6月12日</span>
+                </div>
+            </div>
+            <div class="col-md-4 bottom-menu">
+                <h4  class="bottomh" >标签云</h4>
+                <a href="" class="tips2">Laravel 5.2</a>
+                <a href="" class="tips2">Spark</a>
+                <a href="" class="tips2">镜像</a>
+                <a href="" class="tips2">新版本发布</a>
+                <a href="" class="tips2">LTS</a>
+                <a href="" class="tips2">微框架</a>
+                <a href="" class="tips2">Lumen</a>
+                <a href="" class="tips2">命名空间</a>
+                <a href="" class="tips2">Laravel4</a>
+                <a href="" class="tips2">升级</a>
+                <a href="" class="tips2">错误页</a>
+                <a href="" class="tips2">Laravel 5</a>
+                <a href="" class="tips2">Artisan</a>
+                <a href="" class="tips2">Laravel 5.1</a>
+                <a href="" class="tips2">Lravel</a>
+                <a href="" class="tips2">...</a>
+            </div>
+            <div class="col-md-4 bottom-menu" >
+
+                <h4  class="bottomh" >合作伙伴</h4>
+                <div class="bottom-box" >
+                    <a href="" class="tips3">Bootstrap中文网</a>
+                    <a href="" class="tips3">开放CDN服务</a>
+                    <a href="" class="tips3">Grunt中文网</a>
+                    <a href="" class="tips3">Gulp中文网</a>
+                </div>
+                <div  class="bottom-box">
+                    <a href="" class="tips3">Lodash中文文档</a>
+                    <a href="" class="tips3">jQuery中文文档</a>
+                </div>
+                <div class="bottom-box">
+                    <a href="" class="tips3">又拍云</a>
+                    <a href="" class="tips3">UCloud</a>
+                    <a href="" class="tips3">乐视云</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="end" style="padding: 28px ;background: #111111;border-top:1px solid rgba(48, 48, 48, 0.67) ;">
+    <div class="endmain " >
+      <span style="display:block;text-align: center;color: #555555">Copyright © Laravel 中文网 | 京ICP备11008151号 | 京公网安备11010802014853</span>
+    </div>
+</div>
+<i class="backtotop" onclick="backtotop()"></i>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+<script>
+    function backtotop() {
+        var scrollTop=document.body.scrollTop;
+        if (scrollTop<=0){
+            return;
+        }
+        scrollBy(0,-100);
+        setTimeout(backtotop,10)
+    }
+</script>

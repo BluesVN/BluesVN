@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width:800px;
+				height:300px;
+				margin:100px auto;
+				position: relative;
+				/*overflow: hidden;*/
+				border-radius: 10px;
+				perspective: 1000px;
+			}
+			.prev,.next{
+				position: absolute;
+				width:50px; height:50px;
+				line-height: 50px; text-align: center;
+				background:rgba(0,0,0,0.6);
+				color:white;
+				top:0; bottom:0;
+				margin:auto;
+				font-weight: bold;
+				font-size: 20px;
+				text-shadow: 0 0 10px #000 ;
+				z-index: 999;
+				cursor: pointer;
+			}
+			.next{ right:0;}
+			.boxShow{width:inherit;
+				     height:inherit;
+				     transform-style: preserve-3d;
+				     transition: all 1s ease-in-out;/*加速后减速*/
+				     
+		    }
+		/*    .boxShow:hover{transform:rotateX(360deg);}*/
+			.boxShow>div{
+				width:inherit;
+				height:inherit;
+				position: absolute;
+				top:0; left:0;
+				font-size: 40px;
+				color:white;
+			}
+			.s4{
+				transform:rotateX(90deg) translateZ(150px);
+			}
+			.s3{
+				transform:rotateX(180deg)translateZ(150px);
+			}
+			.s2{transform:rotateX(-90deg) translateZ(150px); }
+			.s1{transform:translateZ(150px); }
+			
+			.btn{
+				text-align: center;
+				font-size: 0;
+				margin-top: -40px;
+			}
+			.btn div{
+				position: relative;
+				width:12px; height:12px;
+				background:white;
+				display: inline-block;
+				margin:0 5px;
+				border-radius: 15px;
+				border:3px solid rgba(0,0,0,.6);
+				background-clip: content-box;
+				box-shadow:inset 3px 3px 5px rgba(0,0,0,.4),0px 0px 5px rgba(0,0,0,.4);
+				z-index: 99999;
+			}
+			.btn div:hover{
+              width:30px
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="prev"> < </div>
+			<div class="next"> > </div>
+			<div class="boxShow">
+				<div class="s1" style="background:rgba(139, 69, 19, 0.52);">1</div>
+				<div class="s2" style="background:rgba(250, 128, 114, 0.56);">2</div>
+				<div class="s3" style="background:rgba(212, 107, 33, 0.7)">3</div>
+				<div class="s4" style="background:rgba(106, 90, 205, 0.56);">4</div>
+			</div>
+			<div class="btn">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var prev=document.querySelector(".prev");
+	var next=document.querySelector(".next");
+	
+	var boxShows=document.querySelector(".boxShow");
+	var btns=document.querySelectorAll(".btn div");
+	
+	var i=0;
+	prev.onclick=function(){
+	   i=i-1;
+	   boxShows.style.transform="rotateX("+i*90+"deg)";
+	};
+	
+	next.onclick=function(){
+	   i=i+1;
+	   boxShows.style.transform="rotateX("+i*90+"deg)"
+	};
+	
+	for(var t=0;t<btns.length;t++){
+		btns[t].index=t;
+		btns[t].onclick=function(){
+			 boxShows.style.transform="rotateX("+this.index*90+"deg)";
+
+		}
+	}
+</script>

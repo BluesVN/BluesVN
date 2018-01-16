@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        body{margin: 0;background: black;}
+        .wutai{
+            perspective:20000px;
+
+        }
+        .rongqi
+        {
+            transform-style:preserve-3d;
+            width: 500px;height: 500px;
+           /* border: 1px solid white;
+            background: rgba(217, 109, 31, 0.36);*/
+            position: absolute;top:2000px;bottom: 200px;
+            left: 0;right: 0;
+            margin: auto;
+          /*  transform: rotateX(320deg) rotateY(16deg);*/
+
+        }
+        .rongqi div{
+            /*backface-visibility:hidden;*/
+            position: absolute;top: 0;bottom: 0; margin: auto;left: 0;right: 0;
+            width: 200px;height: 200px;
+            color: white;font-size: 200px; text-align: center;
+        }
+
+        .t1{transform:rotateY(45deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+        .t2{transform:rotateY(90deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+        .t3{transform:rotateY(135deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+        .t4{transform:rotateY(180deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+        .t5{transform:rotateY(225deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+        .t6{transform:rotateY(270deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+        .t7{transform:rotateY(315deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+        .t8{transform:rotateY(360deg ) translateZ(300px);background: rgba(219, 112, 147, 0.43)  }
+
+
+
+
+         .x1{transform:rotateX(25deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)  }
+         .x2{transform:rotateX(70deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)   }
+         .x3{transform:rotateX(115deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)  }
+         .x4{transform:rotateX(160deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)   }
+         .x5{transform:rotateX(205deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)   }
+         .x6{transform:rotateX(250deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)   }
+         .x7{transform:rotateX(295deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)   }
+         .x8{transform:rotateX(340deg ) translateZ(350px);background: rgba(255, 193, 30, 0.43)   }
+
+        .A1{transform:rotateY(-67.5deg ) rotateX(45deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+        .A2{transform:rotateY(-67.5deg ) rotateX(90deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+        .A3{transform:rotateY(-67.5deg ) rotateX(135deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+        .A4{transform:rotateY(-67.5deg ) rotateX(180deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+        .A5{transform:rotateY(112.5deg ) rotateX(225deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+        .A6{transform:rotateY(112.5deg ) rotateX(270deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+        .A7{transform:rotateY(112.5deg ) rotateX(315deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+        .A8{transform:rotateY(-67.5deg ) rotateX(360deg)translateZ(450px);background: rgba(13, 219, 9, 0.43)  }
+
+        .b1{transform:rotateY(45deg ) rotateX(45deg)translateZ(600px);background: rgba(255, 19, 35, 0.64)  }
+        .b2{transform:rotateY(45deg ) rotateX(90deg)translateZ(600px);background: rgba(255, 19, 35, 0.64) }
+        .b3{transform:rotateY(45deg ) rotateX(135deg)translateZ(600px);background: rgba(255, 19, 35, 0.64) }
+        .b4{transform:rotateY(45deg ) rotateX(180deg)translateZ(600px);background: rgba(255, 19, 35, 0.64) }
+        .b5{transform:rotateY(225deg ) rotateX(225deg)translateZ(600px);background: rgba(255, 19, 35, 0.64) }
+        .b6{transform:rotateY(225deg ) rotateX(270deg)translateZ(600px);background: rgba(255, 19, 35, 0.64)  }
+        .b7{transform:rotateY(225deg ) rotateX(315deg)translateZ(600px);background: rgba(255, 19, 35, 0.64)  }
+        .b8{transform:rotateY(45deg ) rotateX(360deg)translateZ(600px);background: rgba(255, 19, 35, 0.64)  }
+
+
+
+        .rongqi:hover{transform: rotateX(0deg) rotateY(-270deg) rotateZ(0deg);}
+         @keyframes myA {
+             100%{transform: rotateY(720deg) rotateX(720deg) rotateZ(720deg) ;}
+         }
+         .rongqi {animation: myA 10s infinite ;}
+         .rongqi:hover{animation-play-state:paused}  /*暂停动画*/
+    </style>
+
+</head>
+<body>
+<div class="wutai">
+    <div class="rongqi">
+        <div class="t1">$</div>
+        <div class="t2">$</div>
+        <div class="t3">$</div>
+        <div class="t4">$</div>
+        <div class="t5">$</div>
+        <div class="t6">$</div>
+        <div class="t7">$</div>
+        <div class="t8">$</div>
+        <div class="x1"></div>
+        <div class="x2"></div>
+        <div class="x3"></div>
+        <div class="x4"></div>
+        <div class="x5"></div>
+        <div class="x6"></div>
+        <div class="x7"></div>
+        <div class="x8"></div>
+        <div class="A1"></div>
+        <div class="A2"></div>
+        <div class="A3"></div>
+        <div class="A4"></div>
+        <div class="A5"></div>
+        <div class="A6"></div>
+        <div class="A7"></div>
+        <div class="A8"></div>
+
+        <div class="b1"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+        <div class="b4"></div>
+        <div class="b5"></div>
+        <div class="b6"></div>
+        <div class="b7"></div>
+        <div class="b8"></div>
+    </div>
+</div>
+
+</body>
+</html>

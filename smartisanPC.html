@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dylan锤子页面练习</title>
+    <link rel="stylesheet" href="smartisanfont/iconfont.css">
+    <style>
+
+
+        body{margin:0;}
+        .back-top{background: url("imgdemo/置顶.png") ;position:fixed;bottom: 20px;right:20px;height: 54px;width: 54px;transition: 2s;}
+        .back-top:hover{box-shadow:inset 0 0 10px 1px rgba(163, 163, 163, 0.43);border-radius: 10px;}
+
+        .header{height: 100px;background: black;}
+        .container{width: auto;height: 2200px;background: #ececec;}
+        .main{width: 1220px;height: 2200px;/**border: 1px solid red;**/margin: auto;}
+        .nav{width: 1220px;margin: auto;height:100px;}
+        .logo{float:left;width: 50px;height: 50px;overflow:hidden;margin-top: 25px;}
+        .nav1{float: right;line-height: 100px;color: #8c8c8c;}
+        .nav1 a{cursor:pointer;margin: 0 18px;text-decoration: none;color: #8c8c8c;font-size: 15px;transition: .5s;}
+        .nav1 a:hover{color: white;}
+        .nav1 input{outline: none;cursor:pointer;width: 100px;height: 30px;background: #111111;border-radius: 10px;color: #ececec;border: 1px solid rgba(174, 174, 174, 0.5);}
+
+        .menu{height: 90px;}
+        .menu a{text-decoration: none;color: #4e4e4e;transition: .5s; }
+
+        .menu a:hover{color: blue;}
+        .menu-1 ul{margin: 0;padding: 0;}
+        .menu-1 ul li {float:left;margin-right:15px;padding-right:20px;line-height: 90px;font-size: 14px;}
+        .menu-2{position: relative;top:55px;left: 1110px;height: 20px;width: 150px;z-index: 5;margin: 0;}
+        .menu-2 a{color:gray;font-family: 微软雅黑;font-size: 13px; }
+
+
+        .shopping{width: 40px;height: 40px;position: absolute;top:0;right: 30px;}
+        .shopping-t{color: #666666;display: none;background: white;width: 312px;height: 172px;position: absolute;top:50px;right: 5px;border-radius: 10px;box-shadow:6px 6px 20px 6px rgba(151, 151, 151, 0.42); }
+
+        .xiaosanjiao{display: none;width: 0px;height: 0px;
+            position: absolute;top: 12px;right: 40px;
+            border-top: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-left: 20px solid transparent;
+            border-bottom: 20px solid white;
+            }
+
+
+
+        .menu-2:hover .shopping-t{display:block;}
+        .menu-2:hover .xiaosanjiao{display:block;}
+
+
+
+
+
+
+
+
+
+
+        .banner{width: inherit;height: 500px;border-radius: 10px;transition: 1s;overflow:hidden;position: relative;}
+        .banner-d{width: 1220px;height: 500px;background: url("imgdemo/锤子科技的一小步.png") no-repeat ;position: absolute;background-size: 100%;}
+        .banner-b{width: 1220px;height: 500px;background: url("imgdemo/锤子不锈钢b.png") no-repeat;position:absolute;background-size: 100%; }
+        .banner-s{width: 1220px;height: 500px;background: url("imgdemo/锤子不锈钢.png")no-repeat ;position:absolute;background-size: 100%; }
+
+        .banner:hover .banner-b {padding: 0 3px;}
+        .banner:hover .banner-s {padding-right:5px;}
+        .banner:hover{box-shadow:0 0 80px 6px #3e3e3e;}
+
+        .banner2{height: 200px;width: inherit;border-radius: 10px;margin-top: 18px;overflow: hidden;}
+        .banner2-1{background: url("imgdemo/M1.jpg") ;background-size: 100% ;width: 304px;height: inherit;float: left;margin-right: 1px;transition:.3s;}
+        .banner2-2{background: url("imgdemo/onestep.png");background-size: 100%  ;width: 304px;height: inherit;float: left;margin-right: 1px;transition:.3s;}
+        .banner2-3{background: url("imgdemo/配件.jpg");background-size: 100%  ;width: 304px;height: inherit;float: left;margin-right: 1px;transition:.3s;}
+        .banner2-4{background: url("imgdemo/时尚.jpg") ;background-size: 100% ;width: 304px;height: inherit;float: left;margin-right: 1px;transition:.3s;}
+
+
+
+        .banner2 div:hover{box-shadow: inset 0 0 10px 6px rgba(88, 88, 88, 0.17);}
+
+
+        .title-gfjx{padding-top: 30px;margin: 0;color: #707070;}
+
+
+
+        .shop{border-radius: 10px;height: 860px;width: inherit;}
+        .shop-1{border: 1px solid rgba(150, 150, 150, 0.35);;box-sizing: border-box;}
+
+        .shop-0{background: url("imgdemo/锤子不锈钢版.jpg");width: 610px;height: 430px;overflow: hidden;border-top-left-radius: 10px;border: 1px solid rgba(150, 150, 150, 0.35);box-sizing: border-box;}
+        .shop ul{padding: 0;}
+        .shop ul li {list-style: none;float: left;}
+        .shop ul li .shop-1 {height: 430px;width: 305px;text-align:center;padding-top:20px;background: white;/**border: 1px solid rgba(174, 174, 174, 0.5);**/box-sizing:border-box;}
+        .shop div:hover{box-shadow: inset 0 0 10px 6px rgba(88, 88, 88, 0.17);transition:  .5s;}
+
+        .shop span {display: block;margin-top:20px;}
+        .xianshi{color: red;font-size: 22px;font-family:"微软雅黑";margin-top: 30px;text-align: center;}
+        .yincang{display: none;margin-top: 30px;height: 30px;text-align: center;}
+        .yincang input{width: 100px;height: inherit;border-radius: 10px;border: 1px solid rgba(158, 158, 158, 0.31);}
+
+        .shop div:hover .xianshi{display: none;}
+        .shop div:hover .yincang{display: block;box-shadow: none;}
+
+        .title-smart{margin-top: 30px;}
+        .title-smart a{float: right;text-decoration: none;font-family: 微软雅黑;color: #666666;}
+        .title-smart a:hover{color: #046ed7;}
+
+
+        .app{height: 360px;width: 1220px;border-radius: 10px;background: white;margin-top: 10px;overflow: hidden;}
+        .ap{float: left;height: inherit;width: 305px;padding: 80px 0;border:1px solid rgba(150, 150, 150, 0.35);box-sizing: border-box;}
+        .app1{width: 90px;height: 90px;background: url("imgdemo/app小图标.png") no-repeat -95px 0px ;margin: auto;}
+        .app1-w{display: block;text-align: center;margin-top: 30px;font-size: 20px;font-family: 微软雅黑;}
+        .app1-1{width: 150px;height: 110px;display: none;margin: auto;font-size: 13px;}
+        .a-app{text-decoration: none;float: left;width: inherit;display: block;margin-left: 15px;}
+
+        .ap:hover {box-shadow: inset 0 0 10px 6px rgba(88, 88, 88, 0.17);transition: .5s;}
+        .ap:hover .app1 {display: none;}
+        .ap:hover .app1-w {display: none;}
+        .ap:hover .app1-1 {display: block;}
+
+
+        .app2{width: 90px;height: 90px;background: url("imgdemo/app小图标.png") no-repeat 0px 0px ;margin: auto;}
+        .app2-1{width: 150px;height: 110px;display: none;margin: auto;font-size: 13px;}
+        .app2-1 input{width: 210px;height: 50px;margin:20px 47px 0 -25px;padding: 0;}
+        .down-1 {width: 210px;height: 50px;border:1px solid gainsboro;border-radius: 10px;margin: 20px 0 20px -25px;background: rgba(208, 208, 208, 0.28)
+        }
+        .down-1 a{text-decoration: none;display: block;margin-top: 18px;
+            margin-left: 45px;;font-size: 15px;color: gray;}
+        .down-2 {width: 210px;height: 50px;border:1px solid gainsboro;border-radius: 10px;margin: 20px 0 20px -25px ;background: #4b4b4b;}
+        .ap:hover .app2-1 {display: block;}
+        .ap:hover .app2 {display: none;}
+
+        .app3{width: 90px;height: 90px;background: url("imgdemo/app小图标.png") no-repeat -288px 0px ;margin: auto;}
+        .ap:hover .app3 {display: none;}
+
+        .app4{width: 90px;height: 90px;background: url("imgdemo/app小图标.png") no-repeat -193px 0px ;margin: auto;}
+        .ap:hover .app4 {display: none;}
+
+
+
+
+
+
+        .bottom{width: auto;height: 300px;background: #f9f9f9;}
+        .nav-bottom{width: 1220px;height: inherit;margin: auto;}
+        .nav-bottom h3{margin: 30px 0;padding: 0;color: rgba(106, 106, 106, 0.93);font-family: 华文细黑;font-size: 15px;}
+        .nav-bottom ul{float: left;padding: 0;margin-right: 50px;margin-top: 25px;list-style: none;}
+        .nav-bottom ul li a{margin: 5px 0;font-size: 15px;color: #8c8c8c;opacity: 0.8;text-decoration: none;}
+
+        .nav-bottom ul li :hover{color: #046ed7;}
+
+        .number{width: 280px;float: right;margin-top: 30px;}
+        .number h1 {float: right;color: rgba(34, 34, 34, 0.74);}
+
+        .number span {float: right;color: #8c8c8c;opacity: 0.8;}
+        .number input{float:right;width: 130px;height: 34px;background: #f9f9f9;border: 1px solid rgba(123, 123, 123, 0.51);border-radius: 10px;margin-top: 10px;color: cornflowerblue;font-size: 14px;}
+
+
+
+        .end{width: 1220px;height: 50px;}
+        .end-1{float: left;height: inherit;width: 750px;font-size: 12px;}
+        .end-1 a{;border-left: 1px solid #333333;padding: 0 5px;}
+        .china a{float: right;color: cornflowerblue;}
+        .end a{text-decoration: none;color: cornflowerblue;}
+
+
+    </style>
+</head>
+<body>
+    <a href="#top"> <div class="back-top"></div></a>
+    <div class="header" id="top">
+        <div class="nav">
+            <div class="logo">
+                <a href=""><img src="imgdemo/logo.png" alt=""/></a>
+            </div>
+            <div class="nav1">
+                <a style="color: white" href="">在线商城</a>
+                <a href="">Smartisan M1 / M1L</a>
+                <a href="">Smartisan OS</a>
+                <a href="">欢喜云</a>
+                <a href="">应用下载</a>
+                <a href="">官方论坛</a>
+                <span style="margin-right: 20px">|</span>
+                <input type="button" value="登录"/>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+
+        <div class="main">
+            <div class="menu-2">
+                <a href="" style="text-decoration: none"><i class="iconfont">&#xe61d;</i><span> 购物车</span></a>
+                <div class="shopping"><i class="iconfont">&#xe661;</i></div>
+                <div class="xiaosanjiao"></div>
+                <div class="shopping-t"><img src="imgdemo/购物车.png" style="display: block;margin: 30px 110px ;" alt=""/><span style="width: 250px;font-size: 14px;display: block;margin: 10px 80px;">您的购物车还未添加商品</span></div>
+            </div>
+            <div class="menu">
+                <div class="menu-1">
+                    <ul>
+                        <li style="list-style: none"><a href=""><b>精选</b></a></li>
+                        <li><a href="">手机</a></li>
+                        <li><a href="">耳机 / 音箱</a></li>
+                        <li><a href="">背壳 / 保护套</a></li>
+                        <li><a href="">“情怀”背壳</a></li>
+                        <li><a href="">其他周边</a></li>
+                        <li><a href="">保修服务</a></li>
+                        <li><a href="">全部商品</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="banner">
+               <div class="banner-d"></div>
+               <div class="banner-b"></div>
+               <div class="banner-s"></div>
+            </div>
+            <div class="banner2">
+                <div class="banner2-1"></div>
+                <div class="banner2-2"></div>
+                <div class="banner2-3"></div>
+                <div class="banner2-4"></div>
+
+            </div>
+            <h2 class="title-gfjx">官方精选</h2>
+            <div class="shop">
+
+                <ul>
+                    <li><div class="shop-0" ></div></li>
+
+
+                    <li><div class="shop-1"><img src="imgdemo/耳机.jpg" alt=""/><span >REVO 混音头戴式耳机</span><div class="xianshi">￥ 399</div><div class="yincang"><input type="button" value="查看详情" style="background:#ececec;color:grey"/>  <input type="button" value="加入购物车" style="background: dodgerblue;color: white"/></div></div></li>
+
+
+                    <li><div class="shop-1" style="border-radius: 0 10px 0 0"><img src="imgdemo/蓝色耳机.jpg" alt=""/><span >JBL E30 头戴式耳机</span><div class="xianshi">￥ 499</div><div class="yincang"><input type="button" value="查看详情" style="background:#ececec;color:grey"/>  <input type="button" value="加入购物车" style="background: dodgerblue;color: white"/></div></div></li>
+
+
+                    <li><div class="shop-1" style="border-radius: 0 0 0 10px"><img src="imgdemo/黑色耳机.jpg" alt=""/><span >Smartisan S-1000 耳机</span><div class="xianshi">￥ 199</div><div class="yincang"><input type="button" value="查看详情" style="background:#ececec;color:grey"/>  <input type="button" value="加入购物车" style="background: dodgerblue;color: white"/></div></div></li>
+
+
+                    <li><div class="shop-1"><img src="imgdemo/手环.jpg" alt=""/><span >bong2S 心率智能手环</span><div class="xianshi">￥ 129</div><div class="yincang"><input type="button" value="查看详情" style="background:#ececec;color:grey"/>  <input type="button" value="加入购物车" style="background: dodgerblue;color: white"/></div></div></li>
+
+
+                    <li><div class="shop-1"><img src="imgdemo/智能手表.jpg" alt=""/><span >Misfit Shine2 智能运动手环</span><div class="xianshi">￥ 699</div><div class="yincang"><input type="button" value="查看详情" style="background:#ececec;color:grey"/>  <input type="button" value="加入购物车" style="background: dodgerblue;color: white"/></div></div></li>
+
+
+                    <li><div class="shop-1" style="border-radius: 0  0 10px 0"><img src="imgdemo/体恤.jpg" alt=""/><span >Smartisan T恤 男款</span><div class="xianshi">￥ 99</div><div class="yincang"><input type="button" value="查看详情" style="background:#ececec;color:grey"/>  <input type="button" value="加入购物车" style="background: dodgerblue;color: white"/></div></div></li>
+
+                </ul>
+            </div>
+
+            <div class="title-smart">
+                <h2 style="display: inline;color: #707070">Smartisan App</h2>
+                <a href="">全部应用 ></a>
+            </div>
+
+            <div class="app">
+                <div class="ap">
+                    <div class="app1"></div><span class="app1-w">锤子桌面</span>
+                   <div class="app1-1"><img style="margin: auto;display: block"  src="imgdemo/二维码.png" alt=""/><br/><span>扫描二维码下载锤子桌面</span><br/><br/><a class="a-app" href="" style="display: block; ">进一步了解锤子桌面></a></div>
+                </div>
+
+                <div class="ap">
+                    <div class="app2"></div><span class="app1-w">HandShaker</span>
+                    <div class="app2-1"><div class="down-1"><a href="">直接下载安装文件</a></div><div class="down-2">
+                        <img src="imgdemo/macappstore.png" style="width: 160px;height: 35px;border-radius: 10px;display: block;margin: auto;margin-top: 8px;" alt=""/>
+                    </div><a class="a-app" href="" style="display: block; ">进一步了解锤子桌面></a></div>
+                </div>
+
+                <div class="ap">
+                    <div class="app3"></div><span class="app1-w">锤子阅读</span>
+                    <div class="app1-1"><img style="margin: auto;display: block"  src="imgdemo/二维码.png" alt=""/><br/><span>扫描二维码下载锤子阅读</span><br/><br/><a class="a-app" href="" style="display: block; ">进一步了解锤子阅读></a></div>
+                </div>
+
+                <div class="ap">
+                    <div class="app4"></div><span class="app1-w">锤子便签</span>
+                    <div class="app1-1"><img style="margin: auto;display: block"  src="imgdemo/二维码.png" alt=""/><br/><span>扫描二维码下载锤子便签</span><br/><br/><a class="a-app" href="" style="display: block; ">进一步了解锤子便签></a></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="bottom">
+    <div class="nav-bottom">
+
+            <ul>
+                <h3>订单服务</h3>
+                <li><a href="">购买指南</a></li>
+                <li><a href="">支付方式</a></li>
+                <li><a href="">送货政策</a></li>
+            </ul>
+
+            <ul>
+                <h3>服务支持</h3>
+                <li><a href="">售后服务</a></li>
+                <li><a href="">维修门店</a></li>
+                <li><a href="">零售门店</a></li>
+            </ul>
+
+            <ul>
+                <h3>自助服务</h3>
+                <li><a href="">热点咨询</a></li>
+                <li><a href="">预约购买</a></li>
+                <li><a href="">订单物流</a></li>
+            </ul>
+
+            <ul>
+                <h3>媒体中心</h3>
+                <li><a href="">新闻动态</a></li>
+                <li><a href="">官方视频</a></li>
+                <li><a href="">图片资源</a></li>
+            </ul>
+
+            <ul>
+                <h3>关于公司</h3>
+                <li><a href="">公司简介</a></li>
+                <li><a href="">加入我们</a></li>
+                <li><a href="">联系我们</a></li>
+            </ul>
+
+            <ul>
+                <h3>关注我们</h3>
+                <li><a href="">新浪微博</a></li>
+                <li><a href="">官方微信</a></li>
+                <li><a href="">官方贴吧</a></li>
+            </ul>
+
+
+        <div class="number">
+           <h1>400-619-0909</h1>
+            <span>周一至周日 9:00-18:00（仅收市话费）</span>
+           <input type="button" class="iconfont" value="&#xe661; 在线帮助" style="outline: none"/>
+        </div>
+
+        <hr style="float: left;width: inherit ;color: #8c8c8c ;opacity: .5;margin: 30px 0;" />
+
+        <div class="end">
+            <div class="end-1">
+                <span style="color:rgba(106, 106, 106, 0.93) ">Copyright © 2016, Smartisan Digital Co., Ltd. All Rights Reserved.北京锤子数码科技有限公司</span>
+                <a href="">法律声明</a>
+                <a href="">隐私条款</a>
+                <a href="">开发者中心</a>
+
+                <span style="color: #8c8c8c;opacity: 0.8">京ICP备14041720号-1京ICP证140622号京公网安备11010502025474</span>
+            </div>
+            <div class="china"><a href="">中文</a></div>
+        </div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		html,body,.box{ height:100%;margin:0;}
+			.box{
+				width:1000px;
+				position: relative;	
+				perspective: 1000px;
+				left: 0;right: 0;margin: auto;
+
+			}
+			.rect{
+				position: absolute;
+				top:0; right:0;
+				bottom:0; left:0;
+				width:100px; height:100px;
+				margin:auto;
+				background:seagreen;
+				transform-style: preserve-3d;
+			/*	transform: rotateX(-10deg);*/
+				transition: all 1s;
+				
+			}
+			.rect div{
+				width:100px; height:200px;
+				position: absolute;
+				background:sandybrown;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="rect">
+				<div class="s1" style="background:sandybrown">1</div>
+				<div class="s1" style="background:skyblue">3</div>
+				<div class="s1" style="background:salmon">2</div>
+				<div class="s1" style="background:mistyrose">4</div>
+				<div class="s1" style="background:fuchsia">5</div>
+				<div class="s1" style="background:blue">6</div>
+				<div class="s1" style="background:blueviolet">7</div>
+				<div class="s1" style="background:brown">8</div>
+				<div class="s1" style="background:springgreen">9</div>
+				<div class="s1" style="background:#ff1f09">10</div>
+				<div class="s1" style="background:springgreen">11</div>
+				<div class="s1" style="background:#f9abff">12</div>
+				<div class="s1" style="background:#1c44ff">13</div>
+				<div class="s1" style="background:springgreen">14</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
+<script>
+    var rects=document.querySelector(".rect");
+	var rectDiv=document.querySelectorAll(".rect div");
+	var eg=360/rectDiv.length;  /*360除以div的个数=每个div之间的夹角度数*/
+	var r=300;/*半径等于300*/
+
+	for(var i=0;i<rectDiv.length;i++){
+		/*     Math.PI 数学中的pi π派  */
+	/*console.log(i);//0-13*/
+
+		rectDiv[i].style.left=-((2*Math.PI*r)/rectDiv.length-100)/2+"px";
+		/*rectDiv[i].style.top=120+"px";*/
+		rectDiv[i].style.width=(2*Math.PI*r)/rectDiv.length+"px";/* 周长除以div的个数得到每个div对应那段弧长*/
+		rectDiv[i].style.transform="rotateY("+eg*i+"deg)  translateZ("+(r+200)+"px)"; //让div都旋转开来
+		rectDiv[i].index=i;//把一组数字分别赋值到这个div的数组中定义一个属性名为index的属性（js本没有index）
+		rectDiv[i].onclick=function(){
+			/*alert(-eg*this.index);//this代表一个对象 ，this.index是数字i；旋转角度在负零到负360-eg之间*/
+			rects.style.transform="rotateY("+-eg*this.index+"deg)";//this 对应当前点击的
+			//每点击一个小div让舞台旋转 div所对应的序号乘以每一份的夹角
+
+		}
+	}
+	
+</script>
+<style>
+
+</style>
