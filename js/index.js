@@ -167,7 +167,7 @@
 	})
 //顶部导航取消
 	$("#JLDownload").click(function(){
-		alert("百度网盘分享密码：520m");
+		alert("百度网盘分享密码：gtk9");
 	/*	return false;*/
 	});
 	$("#Mystory").click(function(){
