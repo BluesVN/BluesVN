@@ -69,15 +69,12 @@
         }
 
         .password {
-            width: 200px;
-            background: gainsboro;
-            color: #333;
-            height: 25px;
-            outline: none;
-            padding: 5px 0 0 20px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: clip;
+			box-sizing: border-box;
+		    height: 30px;
+		    line-height: 25px;
+		    border: 1px solid #ccc;
+		    outline: none;
+		    padding-left: 10px;
         }
 
         [contentEditable=true]:empty:not(:focus):before {
@@ -112,7 +109,7 @@
     <div class="mainbox">
         <h2 class="title">欢迎来访,请输入口令</h2>
         <div class="passbox">
-            <div class="password" contenteditable="true" data-text="我的名字是?"></div>
+            <input class="password" type="text" placeholder="我的名字是?">
             <div class="btn">OK</div>
         </div>
     </div>
@@ -124,7 +121,7 @@
             console.log('%c 邮箱：bulesvn@foxmail.com', 'background:black;color:green');
             // 简单的写个验证
             $(".btn").click(function () {
-                var key = $(".password").text();
+                var key = $(".password").val();
                 if (key === "于林楠") {
                     top.location = 'home.html';
                 } else {
