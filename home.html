@@ -49,45 +49,7 @@
             background-size: 200px 100px;
             position: relative;
         }
-                .lightbox{
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            height: 100%;
-            width: 100%;
-            z-index: 7;
-            opacity: 0.3;
-            display: block;
-            background-color: rgb(0, 0, 0);
-            display: none;
-        }
-        .pop,iframe{
-            position: absolute;
-            left: 0;
-            top:0;
-            width: 100%;
-            height: 100%;
-            margin-left: 0;
-            z-index: 9;
-        }
     </style>
-    <script type="text/javascript">
-        function showPdf(isShow) {
-            var state = "";
-            if (isShow) {
-                state = "block";
-            } else {
-                state = "none";
-            }
-            var pop = document.getElementById("pop");
-            pop.style.display = state;
-            var lightbox = document.getElementById("lightbox");
-            lightbox.style.display = state;
-        }
-        function close() {
-            showPdf(false);
-        }
-    </script>
 </head>
 <body>
 <!-- header navigation -->
@@ -102,7 +64,7 @@
 	<nav>
 		<ul>
 			<li><a href="index.html">首页</a></li>
-			<li><a href="file/【于林楠】_前端_简历.pdf" target="pdfContainer" onclick="showPdf(true)">简历.PDF</a></li>
+			<li><a href="resume.html" target="_Blank">简历.PDF</a></li>
 			<li><a id="Mystory" href="">关于我</a></li>
 			<!-- <li><a id="MessageWall" href="">留言墙</a></li> -->
 		</ul>
