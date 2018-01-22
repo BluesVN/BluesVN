@@ -9,7 +9,7 @@
 			}
 			$("#skill_info").append("<p>"+data.skill_info+"</p>");
 			$(".skill_int").append("<ul></ul>");
-			for(var i in data.seo){
+			for(var i in data.VUE){
 				$("#skill_int1 ul").append("<li>"+data.seo[i]+"</li>");
 			}
 			for(var i in data.html){
@@ -21,7 +21,9 @@
 			for(var i in data.javaScript){
 				$("#skill_int4 ul").append("<li>"+data.javaScript[i]+"</li>");
 			}
-			$("#exp_info").append("<p>"+data.exp_info+"</p>");
+			for(var i in data.exp_info){
+				$("#exp_info").append("<p>"+data.exp_info+"</p>");	
+			}
 			for(var i in data.contact_info){
 				$("#contact_info").append("<p>"+data.contact_info[i]+"</p>");	
 			}
