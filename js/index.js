@@ -21,9 +21,7 @@
 			for(var i in data.javaScript){
 				$("#skill_int4 ul").append("<li>"+data.javaScript[i]+"</li>");
 			}
-			for(var i in data.exp_info){
-				$("#exp_info").append("<p>"+data.exp_info+"</p>");	
-			}
+			$("#exp_info").append("<p>"+data.exp_info+"</p>");
 			for(var i in data.contact_info){
 				$("#contact_info").append("<p>"+data.contact_info[i]+"</p>");	
 			}
